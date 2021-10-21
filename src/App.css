@@ -1,11 +1,25 @@
-.p-menubar {
-  padding: 0.5rem 10%;
-}
-
-.p-menubar .p-menubar-start {
-  font-size: x-large !important;
-}
-
 .p-mb-2 {
   margin-bottom: 1rem !important;
+}
+
+.p-button.p-fileupload-choose {
+  width: 250px;
+}
+
+.cardPadding {
+  padding-right: 5em;
+  padding-left: 5em;
+}
+
+.banner {
+  color: white;
+  background-color: rgb(100, 4, 179);
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button {
+  width: 250px;
 }

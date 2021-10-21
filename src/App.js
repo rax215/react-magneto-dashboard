@@ -10,12 +10,12 @@ import 'primeicons/primeicons.css';
 import 'primeflex/primeflex.css';
 import './App.css';
 
-import { Menubar } from 'primereact/menubar';
+import { Card } from 'primereact/card';
 import { Button } from 'primereact/button';
 import { FileUpload } from 'primereact/fileupload';
 import { Toast } from 'primereact/toast';
 
-function App() {
+const  App = () => {
   const toast = useRef(null);
 
   // download template
@@ -54,13 +54,20 @@ function App() {
   return (
     <div className="app">
       <Toast ref={toast}></Toast>
-      <Menubar className={`p-menubar`} start={`React Magneto`} />
+      <div className="banner">
+  <div className="banner-text">
+    <h1 className='appName'>React Magneto Dashboard</h1>
+  </div>
+</div>
+     
       <div className={`p-d-flex p-flex-column p-ai-center p-m-5`}>
+        <Card className='p-shadow-8 cardPadding'>
         <div className={`p-mb-2`}>
           <Button
             type="button"
             icon="pi pi-download"
             label="Download Template"
+            className="button"
             onClick={handleDownloadTemplate}
           ></Button>
         </div>
@@ -70,14 +77,16 @@ function App() {
             url={`${process.env.REACT_APP_MAGNETO_API}/upload`}
             accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
             mode="basic"
-            chooseLabel="Choose Template"
+            className="button"
+            chooseLabel="Upload Template"
             onUpload={(event) => handleUploadTemplate(event)}
             onError={(event) => handleUploadError(event)}
           />
         </div>
         <div className={`p-mb-2`}>
-          <Button type="button" icon="pi pi-download" label="Generate React App" onClick={handleDownloadZip}></Button>
+          <Button type="button" icon="pi pi-download" className="button" label="Generate React Application" onClick={handleDownloadZip}></Button>
         </div>
+        </Card>
       </div>
     </div>
   );
